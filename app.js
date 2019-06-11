@@ -1,1 +1,5 @@
-fs.writeFileSync("notes.txt", "this filewas made")
+require('./utils.js');
+
+console.log(name);
+
+module.exports = name
