@@ -1,5 +1,6 @@
-require('./utils.js');
+const fs = require('fs')
 
-console.log(name);
+// fs.writeFileSync("notes.txt", "james")
 
-module.exports = name
+fs.appendFileSync("notes.txt", "jimbo")
+ 
