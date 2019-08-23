@@ -1,6 +1,27 @@
-const fs = require('fs')
+const chalk = require('chalk')
+const log = console.log
+const getNotes = require('./notes.js')
+const yargs = require('yargs')
 
-// fs.writeFileSync("notes.txt", "james")
+//cust yargs versin
+yargs.version("1.1.0")
 
-fs.appendFileSync("notes.txt", "jimbo")
- 
+//add,remove read list
+
+yargs.command({
+    command: 'add',
+    description: "add new note",
+    handler: function () {
+        log('adding new note')
+    }
+})
+
+yargs.command({
+    command: 'remove',
+    description: "remove note",
+    handler: function () {
+        log('removing new note')
+    }
+})
+
+log(yargs.argv)
