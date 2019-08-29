@@ -23,7 +23,7 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function (argv) {
+    handler(argv) {
         notes.addNote(argv.title,argv.body)
     }
 })
@@ -38,23 +38,23 @@ yargs.command({
             type:'string'
         }
     },
-    handler: function (argv) {
+    handler(argv) {
         notes.removeNote(argv.title)
     }
 })
 
 yargs.command({
     command: 'list',
-    description: "list notes note",
-    handler: function () {
-        log('listing notes')
+    description: "list notes",
+    handler(argv) {
+        notes.listNotes(notes)
     }
 })
 
 yargs.command({
     command: 'read',
     description: "read note",
-    handler: function () {
+    handler() {
         log('reading this note')
     }
 })
